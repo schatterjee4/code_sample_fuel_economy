@@ -9,6 +9,10 @@ import com.interview.vaporstream.fueleconomy.event.BackgroundStatusChangeEvent;
 
 import org.greenrobot.eventbus.EventBus;
 
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
+import io.realm.RealmConfiguration.Builder;
+
 /**
  * Created by mperkins on 9/28/16.
  */
@@ -41,6 +45,13 @@ public class FuelEconomyApplication extends Application implements Application.A
 		super.onCreate();
 		sharedInstance = this;
 		registerActivityLifecycleCallbacks(this);
+		configureRealm();
+	}
+
+	private void configureRealm () {
+		RealmConfiguration realmConfig =
+				new Builder().deleteRealmIfMigrationNeeded().build();
+		Realm.setDefaultConfiguration(realmConfig);
 	}
 
 	@Override
@@ -100,6 +111,7 @@ public class FuelEconomyApplication extends Application implements Application.A
 			if(!isAppInBackground) {
 				isAppInBackground = true;
 				notifyAppOfBackgroundChangeEvent();
+				Realm.getDefaultInstance().close();
 			}
 		}
 	}

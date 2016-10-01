@@ -11,6 +11,8 @@ import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
 
 public class FuelEconomyGovWebReference {
 
+	private static final String FUELECONOMYGOV_URL = "http://www.fueleconomy.gov";
+
 	private static FuelEconomyGovWebReference sharedInstance;
 	public static FuelEconomyGovWebReference getSharedInstance() {
 		synchronized (FuelEconomyGovWebReference.class) {
@@ -27,7 +29,7 @@ public class FuelEconomyGovWebReference {
 
 	private FuelEconomyGovWebReference() {
 		webReference = new Retrofit.Builder()
-				.baseUrl("")
+				.baseUrl(FUELECONOMYGOV_URL)
 				.addConverterFactory(SimpleXmlConverterFactory.create())
 				.build();
 	}

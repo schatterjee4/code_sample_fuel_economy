@@ -15,13 +15,16 @@ import com.interview.vaporstream.fueleconomy.event.NetworkAvailabilityChangeEven
  * Created by mperkins on 9/28/16.
  */
 
-public class SelectVehicleActivity extends BaseActivity {
+public class SelectVehicleActivity extends FuelEconomyBaseActivity {
+
 
 	public static Intent getSelectVehicleActivityIntent(Context context) {
 		Intent intent = new Intent(context, SelectVehicleActivity.class);
 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		return intent;
 	}
+
+	private ActivitySelectVehicleBinding binding;
 
 	@Override
 	protected void onCreate (@Nullable Bundle savedInstanceState) {
@@ -50,7 +53,18 @@ public class SelectVehicleActivity extends BaseActivity {
 
 	@Override
 	protected void setLayout () {
-		ActivitySelectVehicleBinding binding = DataBindingUtil.setContentView(this, LAYOUT_RESOURCE_ID());
+		binding = DataBindingUtil.setContentView(this, LAYOUT_RESOURCE_ID());
+		binding.setController(getController());
+	}
+
+	@Override
+	protected void findControls () {
+		binding.
+	}
+
+	@Override
+	protected void setControlCallbacks () {
+
 	}
 
 	@Override

@@ -9,6 +9,27 @@
         android:theme="@style/AppTheme"
         android:name=".FuelEconomyApplication">
 
-    </application>
+        <receiver android:name=".receiver.NetworkAvailabilityReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
 
+        <activity android:name=".activity.SplashActivity"
+                  android:label=""
+                  android:theme="@style/AppTheme" />
+
+        <activity android:name=".activity.SavedVehicleListActivity"
+                  android:label="@string/activity_saved_vehicle_list_title"
+                  android:theme="@style/AppTheme" />
+
+        <activity android:name=".activity.SelectVehicleActivity"
+                  android:label="@string/activity_select_vehicle_title"
+                  android:theme="@style/AppTheme" />
+
+        <activity android:name=".activity.VehicleInfoActivity"
+                  android:label="@string/activity_vehicle_info_title"
+                  android:theme="@style/AppTheme" />
+
+    </application>
 </manifest>

@@ -11,7 +11,7 @@ import io.realm.annotations.PrimaryKey;
  */
 
 @Root(name="emissionsInfo")
-public class EmissionsInfo extends RealmObject {
+public class EmissionsInfo {
 
 	@PrimaryKey
 	@Element

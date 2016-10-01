@@ -20,11 +20,15 @@ public abstract class BaseActivity extends AppCompatActivity {
 
 	@LayoutRes protected abstract int LAYOUT_RESOURCE_ID();
 	protected abstract void setLayout();
+	protected abstract void findControls();
+	protected abstract void setControlCallbacks();
 
 	@Override
 	protected void onCreate (@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setLayout();
+		findControls();
+		setControlCallbacks();
 	}
 
 	@Override

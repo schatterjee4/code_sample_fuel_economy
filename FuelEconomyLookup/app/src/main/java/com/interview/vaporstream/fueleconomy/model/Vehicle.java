@@ -16,7 +16,7 @@ import io.realm.annotations.PrimaryKey;
  */
 
 @Root (name="vehicle")
-public class Vehicle extends RealmObject {
+public class Vehicle {
 
 	@PrimaryKey
 	@Element
@@ -269,7 +269,7 @@ public class Vehicle extends RealmObject {
 	private Boolean tCharger;
 
 	@ElementList
-	private RealmList<EmissionsInfo> emissionsList;
+	private List<EmissionsInfo> emissionsList;
 
 	public Vehicle(){
 
