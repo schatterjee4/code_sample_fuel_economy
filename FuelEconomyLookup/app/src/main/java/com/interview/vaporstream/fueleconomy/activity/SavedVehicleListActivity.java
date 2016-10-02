@@ -8,7 +8,9 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
+import com.interview.vaporstream.fueleconomy.FuelEconomyApplication;
 import com.interview.vaporstream.fueleconomy.databinding.ActivitySavedVehiclesBinding;
 import com.interview.vaporstream.fueleconomy.event.BackgroundStatusChangeEvent;
 import com.interview.vaporstream.fueleconomy.R;
@@ -61,8 +63,12 @@ public class SavedVehicleListActivity extends FuelEconomyBaseActivity {
 		binding.savedVehicleList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick (AdapterView<?> parent, View view, int position, long id) {
-				getController().setSelectedVehicle((LocalVehicleRecord)binding.savedVehicleList.getAdapter().getItem(position));
+			if(FuelEconomyApplication.getSharedInstance().isNetworkAvailable()) {
+				getController().setSelectedVehicle((LocalVehicleRecord) binding.savedVehicleList.getAdapter().getItem(position));
 				getController().launchVehicleInformationScreen(SavedVehicleListActivity.this);
+			} else {
+				Toast.makeText(SavedVehicleListActivity.this, "Can't load this information at this time.  Please establish an internet connection and try again.", Toast.LENGTH_LONG).show();
+			}
 			}
 		});
 
