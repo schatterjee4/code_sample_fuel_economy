@@ -3,4 +3,26 @@
     <string name="activity_saved_vehicle_list_title">Saved Vehicles</string>
     <string name="activity_select_vehicle_title">Select a vehicle</string>
     <string name="activity_vehicle_info_title">Vehicle Info</string>
+    <string name="activity_select_vehicle_save_button">Save</string>
+    <string name="activity_select_vehicle_show">Show info</string>
+    <string name="activity_select_vehicle_label_year">Select year</string>
+    <string name="activity_select_vehicle_label_make">Select manufacturer</string>
+    <string name="activity_select_vehicle_label_model">Select vehicle model</string>
+    <string name="activity_select_vehicle_label_vehicle">Select package</string>
+    <string name="progress_loading_data_years">Loading model years…</string>
+    <string name="progress_loading_data_makes">Loading manufacturers…</string>
+    <string name="progress_loading_data_models">Loading models…</string>
+    <string name="progress_loading_data_vehicles">Loading packages…</string>
+    <string name="progress_loading_vehicle_info">Loading vehicle information…</string>
+    <string name="activity_connection_unavailable">Internet Connection Unavailable</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="search">Search</string>
+    <string name="city_mpg">City MPG</string>
+    <string name="hwy_mpg">Highway MPG</string>
+    <string name="combined_mpg">Combined MPG</string>
+    <string name="prompt_delete_vehicle_title">Delete vehicle?</string>
+    <string name="prompt_delete_vehicle_message">Are you sure you\'d like to remove this vehicle?</string>
+    <string name="action_yes">Yes</string>
+    <string name="action_no">No</string>
 </resources>

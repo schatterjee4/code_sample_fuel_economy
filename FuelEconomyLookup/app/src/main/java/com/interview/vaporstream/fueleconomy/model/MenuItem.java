@@ -1,18 +1,22 @@
 package com.interview.vaporstream.fueleconomy.model;
 
+import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
 /**
  * Created by mperkins on 9/29/16.
  */
 
-@Root (name="menuItem")
+@Root (name = "menuItem")
 public class MenuItem {
 
+	@Element (name="text")
 	private String text;
+
+	@Element (name="value")
 	private String value;
 
-	public MenuItem() {
+	public MenuItem () {
 
 	}
 
@@ -35,5 +39,10 @@ public class MenuItem {
 
 	public void setValue (String value) {
 		this.value = value;
+	}
+
+	@Override
+	public String toString() {
+		return text;
 	}
 }

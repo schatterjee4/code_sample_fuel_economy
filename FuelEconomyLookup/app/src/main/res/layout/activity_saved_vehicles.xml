@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="controller" type="com.interview.vaporstream.fueleconomy.controller.FuelEconomyLookupController" />
+        <variable name="selectedVehicle" type="com.interview.vaporstream.fueleconomy.model.Vehicle" />
+        <!-- adapters -->
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:id="@+id/progressIndicator"
+                        android:background="@color/semiTransparentBlack"
+                        android:visibility="gone">
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:background="@color/progressIndicatorBackground"
+                          android:layout_centerHorizontal="true"
+                          android:layout_centerVertical="true"
+                          android:layout_margin="@dimen/margin_large"
+                          android:padding="@dimen/padding_small"
+                          android:gravity="center_horizontal|center_vertical"
+                          android:orientation="vertical">
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_small" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_small"
+                    android:gravity="center_horizontal"
+                    android:id="@+id/progressText" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:id="@+id/layoutContainer">
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/savedVehicleList" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:src="@drawable/add_button"
+                android:clickable="true"
+                android:layout_marginRight="36dp"
+                android:layout_marginBottom="36dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="36dp"
+                android:id="@+id/floatingActionButton"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/noConnectionLayout"
+            android:padding="@dimen/padding_small"
+            android:orientation="vertical"
+            android:background="@color/solidBlack"
+            android:gravity="center_horizontal|center_vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/activity_connection_unavailable"
+                android:textColor="@color/colorAccent"
+                android:textSize="14sp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:gravity="center_vertical|center_horizontal"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</layout>

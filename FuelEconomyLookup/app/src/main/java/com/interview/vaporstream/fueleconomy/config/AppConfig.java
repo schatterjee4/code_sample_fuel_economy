@@ -6,6 +6,4 @@ package com.interview.vaporstream.fueleconomy.config;
 
 public class AppConfig {
 
-
-
 }

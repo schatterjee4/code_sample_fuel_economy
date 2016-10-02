@@ -10,9 +10,10 @@ public abstract class FuelEconomyBaseActivity extends BaseActivity {
 
 	private FuelEconomyLookupController controllerReference;
 	public FuelEconomyLookupController getController () {
-		if(controllerReference == null) {
+		if (controllerReference == null) {
 			controllerReference = FuelEconomyLookupController.getSharedInstance();
 		}
 		return controllerReference;
 	}
+
 }

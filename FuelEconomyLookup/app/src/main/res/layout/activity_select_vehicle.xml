@@ -9,25 +9,121 @@
                   android:layout_width="match_parent"
                   android:layout_height="match_parent">
 
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/select_year_spinner" />
 
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/select_make_spinner" />
+        <RelativeLayout android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:id="@+id/progressIndicator"
+                        android:background="@color/semiTransparentBlack"
+                        android:visibility="gone">
 
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/select_model_spinner" />
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:background="@color/progressIndicatorBackground"
+                          android:layout_centerHorizontal="true"
+                          android:layout_centerVertical="true"
+                          android:layout_margin="@dimen/margin_large"
+                          android:padding="@dimen/padding_small"
+                          android:gravity="center_horizontal|center_vertical"
+                          android:orientation="vertical">
 
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/select_vehicle_spinner" />
+                    <ProgressBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_small" />
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_small"
+                        android:gravity="center_horizontal"
+                        android:id="@+id/progressText" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin_large"
+            android:padding="@dimen/padding_small">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_select_vehicle_label_year" />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/select_year_spinner"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:saveEnabled="false" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_select_vehicle_label_make" />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/select_make_spinner"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:saveEnabled="false"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_select_vehicle_label_model" />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/select_model_spinner"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:saveEnabled="false" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_select_vehicle_label_vehicle" />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/select_vehicle_spinner"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:saveEnabled="false" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/select_vehicle_button_submit"
+                android:text="@string/activity_select_vehicle_save_button"
+                android:padding="@dimen/padding_small"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/noConnectionLayout"
+            android:padding="@dimen/padding_small"
+            android:orientation="vertical"
+            android:background="@color/solidBlack"
+            android:gravity="center_horizontal|center_vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/activity_connection_unavailable"
+                android:textColor="@color/colorAccent"
+                android:textSize="14sp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:gravity="center_vertical|center_horizontal"/>
+
+        </LinearLayout>
     </LinearLayout>
 </layout>

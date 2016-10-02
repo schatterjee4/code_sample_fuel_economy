@@ -3,279 +3,276 @@ package com.interview.vaporstream.fueleconomy.model;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
-
-import java.util.Date;
 import java.util.List;
 
-import io.realm.RealmList;
-import io.realm.RealmObject;
+
 import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by mperkins on 9/29/16.
  */
 
-@Root (name="vehicle")
+@Root (name = "vehicle", strict = false)
 public class Vehicle {
 
 	@PrimaryKey
-	@Element
-	private int id;
+	@Element(required = false)
+	private String id;
 
-	@Element
+	@Element(required = false)
 	private String atvType;
 
-	@Element
-	private float barrels08;
+	@Element(required = false)
+	private String barrels08;
 
-	@Element
-	private float barrelsA08;
+	@Element(required = false)
+	private String barrelsA08;
 
-	@Element
+	@Element(required = false)
 	private String c240Dscr;
 
-	@Element
+	@Element(required = false)
 	private String c240bDscr;
 
-	@Element
-	private float charge120;
+	@Element(required = false)
+	private String charge120;
 
-	@Element
-	private float charge240;
+	@Element(required = false)
+	private String charge240;
 
-	@Element
-	private float charge240b;
+	@Element(required = false)
+	private String charge240b;
 
-	@Element
-	private float city08;
+	@Element(required = false)
+	private String city08;
 
-	@Element
-	private float city08U;
+	@Element(required = false)
+	private String city08U;
 
-	@Element
-	private float cityA08;
+	@Element(required = false)
+	private String cityA08;
 
-	@Element
-	private float cityA08U;
+	@Element(required = false)
+	private String cityA08U;
 
-	@Element
-	private float cityCD;
+	@Element(required = false)
+	private String cityCD;
 
-	@Element
-	private float cityE;
+	@Element(required = false)
+	private String cityE;
 
-	@Element
-	private float cityUF;
+	@Element(required = false)
+	private String cityUF;
 
-	@Element
-	private float co2;
+	@Element(required = false)
+	private String co2;
 
-	@Element
-	private float co2A;
+	@Element(required = false)
+	private String co2A;
 
-	@Element
-	private float co2TailpipeAGpm;
+	@Element(required = false)
+	private String co2TailpipeAGpm;
 
-	@Element
-	private float co2TailpipeGpm;
+	@Element(required = false)
+	private String co2TailpipeGpm;
 
-	@Element
-	private float comb08;
+	@Element(required = false)
+	private String comb08;
 
-	@Element
-	private float comb08U;
+	@Element(required = false)
+	private String comb08U;
 
-	@Element
-	private float combA08;
+	@Element(required = false)
+	private String combA08;
 
-	@Element
-	private float combA08U;
+	@Element(required = false)
+	private String combA08U;
 
-	@Element
-	private float combE;
+	@Element(required = false)
+	private String combE;
 
-	@Element
-	private float combinedCD;
+	@Element(required = false)
+	private String combinedCD;
 
-	@Element
-	private float combinedUF;
+	@Element(required = false)
+	private String combinedUF;
 
-	@Element
-	private Date createdOn;
+	@Element(required = false)
+	private String createdOn;
 
-	@Element
-	private int cylinders;
+	@Element(required = false)
+	private String cylinders;
 
-	@Element
+	@Element(required = false)
 	private String displ;
 
-	@Element
+	@Element(required = false)
 	private String drive;
 
-	@Element
-	private int engId;
+	@Element(required = false)
+	private String engId;
 
-	@Element
+	@Element(required = false)
 	private String eng_dscr;
 
-	@Element
+	@Element(required = false)
 	private String evMotor;
 
-	@Element
-	private float feScore;
+	@Element(required = false)
+	private String feScore;
 
-	@Element
-	private float fuelCost08;
+	@Element(required = false)
+	private String fuelCost08;
 
-	@Element
-	private float fuelCostA08;
+	@Element(required = false)
+	private String fuelCostA08;
 
-	@Element
+	@Element(required = false)
 	private String fuelType;
 
-	@Element
+	@Element(required = false)
 	private String fuelType1;
 
-	@Element
+	@Element(required = false)
 	private String fuelType2;
 
-	@Element
-	private float ghgScore;
+	@Element(required = false)
+	private String ghgScore;
 
-	@Element
-	private float ghgScoreA;
+	@Element(required = false)
+	private String ghgScoreA;
 
-	@Element
+	@Element(required = false)
 	private Boolean guzzler;
 
-	@Element
-	private float highway08;
+	@Element(required = false)
+	private String highway08;
 
-	@Element
-	private float highway08U;
+	@Element(required = false)
+	private String highway08U;
 
-	@Element
-	private float highwayA08;
+	@Element(required = false)
+	private String highwayA08;
 
-	@Element
-	private float highwayA08U;
+	@Element(required = false)
+	private String highwayA08U;
 
-	@Element
-	private float highwayCD;
+	@Element(required = false)
+	private String highwayCD;
 
-	@Element
-	private float highwayE;
+	@Element(required = false)
+	private String highwayE;
 
-	@Element
-	private float highwayUF;
+	@Element(required = false)
+	private String highwayUF;
 
-	@Element
-	private float hlv;
+	@Element(required = false)
+	private String hlv;
 
-	@Element
-	private float hpv;
+	@Element(required = false)
+	private String hpv;
 
-	@Element
-	private float lv2;
+	@Element(required = false)
+	private String lv2;
 
-	@Element
-	private float lv4;
+	@Element(required = false)
+	private String lv4;
 
-	@Element
+	@Element(required = false)
 	private String make;
 
-	@Element
+	@Element(required = false)
 	private String mfrCode;
 
-	@Element
+	@Element(required = false)
 	private String model;
 
-	@Element
-	private Date modifiedOn;
+	@Element(required = false)
+	private String modifiedOn;
 
-	@Element
+	@Element(required = false)
 	private String mpgData;
 
-	@Element
+	@Element(required = false)
 	private Boolean phevBlended;
 
-	@Element
-	private float phevCity;
+	@Element(required = false)
+	private String phevCity;
 
-	@Element
-	private float phevComb;
+	@Element(required = false)
+	private String phevComb;
 
-	@Element
-	private float phevHwy;
+	@Element(required = false)
+	private String phevHwy;
 
-	@Element
-	private float pv2;
+	@Element(required = false)
+	private String pv2;
 
-	@Element
-	private float pv4;
+	@Element(required = false)
+	private String pv4;
 
-	@Element
-	private float range;
+	@Element(required = false)
+	private String range;
 
-	@Element
-	private float rangeA;
+	@Element(required = false)
+	private String rangeA;
 
-	@Element
-	private float rangeCity;
+	@Element(required = false)
+	private String rangeCity;
 
-	@Element
-	private float rangeCityA;
+	@Element(required = false)
+	private String rangeCityA;
 
-	@Element
-	private float rangeHwy;
+	@Element(required = false)
+	private String rangeHwy;
 
-	@Element
-	private float rangeHwyA;
+	@Element(required = false)
+	private String rangeHwyA;
 
-	@Element
+	@Element(required = false)
 	private String startStop;
 
-	@Element
+	@Element(required = false)
 	private String trans_dscr;
 
-	@Element
+	@Element(required = false)
 	private String trany;
 
-	@Element
-	private float UCity;
+	@Element(required = false)
+	private String UCity;
 
-	@Element
-	private float UCityA;
+	@Element(required = false)
+	private String UCityA;
 
-	@Element
-	private float UHighway;
+	@Element(required = false)
+	private String UHighway;
 
-	@Element
-	private float UHighwayA;
+	@Element(required = false)
+	private String UHighwayA;
 
-	@Element
+	@Element(required = false)
 	private String VClass;
 
-	@Element
-	private int year;
+	@Element(required = false)
+	private String year;
 
-	@Element
-	private float youSaveSpend;
+	@Element(required = false)
+	private String youSaveSpend;
 
-	@Element
+	@Element(required = false)
 	private Boolean sCharger;
 
-	@Element
+	@Element(required = false)
 	private Boolean tCharger;
 
-	@ElementList
+	@ElementList(name="emissionsList", required=false, inline = true)
 	private List<EmissionsInfo> emissionsList;
 
-	public Vehicle(){
+	public Vehicle () {
 
 	}
 
-	public int getId () {
+	public String getId () {
 		return id;
 	}
 
@@ -283,11 +280,11 @@ public class Vehicle {
 		return atvType;
 	}
 
-	public float getBarrels08 () {
+	public String getBarrels08 () {
 		return barrels08;
 	}
 
-	public float getBarrelsA08 () {
+	public String getBarrelsA08 () {
 		return barrelsA08;
 	}
 
@@ -299,95 +296,95 @@ public class Vehicle {
 		return c240bDscr;
 	}
 
-	public float getCharge120 () {
+	public String getCharge120 () {
 		return charge120;
 	}
 
-	public float getCharge240 () {
+	public String getCharge240 () {
 		return charge240;
 	}
 
-	public float getCharge240b () {
+	public String getCharge240b () {
 		return charge240b;
 	}
 
-	public float getCity08 () {
+	public String getCity08 () {
 		return city08;
 	}
 
-	public float getCity08U () {
+	public String getCity08U () {
 		return city08U;
 	}
 
-	public float getCityA08 () {
+	public String getCityA08 () {
 		return cityA08;
 	}
 
-	public float getCityA08U () {
+	public String getCityA08U () {
 		return cityA08U;
 	}
 
-	public float getCityCD () {
+	public String getCityCD () {
 		return cityCD;
 	}
 
-	public float getCityE () {
+	public String getCityE () {
 		return cityE;
 	}
 
-	public float getCityUF () {
+	public String getCityUF () {
 		return cityUF;
 	}
 
-	public float getCo2 () {
+	public String getCo2 () {
 		return co2;
 	}
 
-	public float getCo2A () {
+	public String getCo2A () {
 		return co2A;
 	}
 
-	public float getCo2TailpipeAGpm () {
+	public String getCo2TailpipeAGpm () {
 		return co2TailpipeAGpm;
 	}
 
-	public float getCo2TailpipeGpm () {
+	public String getCo2TailpipeGpm () {
 		return co2TailpipeGpm;
 	}
 
-	public float getComb08 () {
+	public String getComb08 () {
 		return comb08;
 	}
 
-	public float getComb08U () {
+	public String getComb08U () {
 		return comb08U;
 	}
 
-	public float getCombA08 () {
+	public String getCombA08 () {
 		return combA08;
 	}
 
-	public float getCombA08U () {
+	public String getCombA08U () {
 		return combA08U;
 	}
 
-	public float getCombE () {
+	public String getCombE () {
 		return combE;
 	}
 
-	public float getCombinedCD () {
+	public String getCombinedCD () {
 		return combinedCD;
 	}
 
-	public float getCombinedUF () {
+	public String getCombinedUF () {
 		return combinedUF;
 	}
 
-	public Date getCreatedOn () {
+	public String getCreatedOn () {
 		return createdOn;
 	}
 
-	public int getCylinders () {
+	public String getCylinders () {
 		return cylinders;
 	}
 
@@ -399,7 +396,7 @@ public class Vehicle {
 		return drive;
 	}
 
-	public int getEngId () {
+	public String getEngId () {
 		return engId;
 	}
 
@@ -411,15 +408,15 @@ public class Vehicle {
 		return evMotor;
 	}
 
-	public float getFeScore () {
+	public String getFeScore () {
 		return feScore;
 	}
 
-	public float getFuelCost08 () {
+	public String getFuelCost08 () {
 		return fuelCost08;
 	}
 
-	public float getFuelCostA08 () {
+	public String getFuelCostA08 () {
 		return fuelCostA08;
 	}
 
@@ -435,11 +432,11 @@ public class Vehicle {
 		return fuelType2;
 	}
 
-	public float getGhgScore () {
+	public String getGhgScore () {
 		return ghgScore;
 	}
 
-	public float getGhgScoreA () {
+	public String getGhgScoreA () {
 		return ghgScoreA;
 	}
 
@@ -447,47 +444,47 @@ public class Vehicle {
 		return guzzler;
 	}
 
-	public float getHighway08 () {
+	public String getHighway08 () {
 		return highway08;
 	}
 
-	public float getHighway08U () {
+	public String getHighway08U () {
 		return highway08U;
 	}
 
-	public float getHighwayA08 () {
+	public String getHighwayA08 () {
 		return highwayA08;
 	}
 
-	public float getHighwayA08U () {
+	public String getHighwayA08U () {
 		return highwayA08U;
 	}
 
-	public float getHighwayCD () {
+	public String getHighwayCD () {
 		return highwayCD;
 	}
 
-	public float getHighwayE () {
+	public String getHighwayE () {
 		return highwayE;
 	}
 
-	public float getHighwayUF () {
+	public String getHighwayUF () {
 		return highwayUF;
 	}
 
-	public float getHlv () {
+	public String getHlv () {
 		return hlv;
 	}
 
-	public float getHpv () {
+	public String getHpv () {
 		return hpv;
 	}
 
-	public float getLv2 () {
+	public String getLv2 () {
 		return lv2;
 	}
 
-	public float getLv4 () {
+	public String getLv4 () {
 		return lv4;
 	}
 
@@ -503,7 +500,7 @@ public class Vehicle {
 		return model;
 	}
 
-	public Date getModifiedOn () {
+	public String getModifiedOn () {
 		return modifiedOn;
 	}
 
@@ -515,47 +512,47 @@ public class Vehicle {
 		return phevBlended;
 	}
 
-	public float getPhevCity () {
+	public String getPhevCity () {
 		return phevCity;
 	}
 
-	public float getPhevComb () {
+	public String getPhevComb () {
 		return phevComb;
 	}
 
-	public float getPhevHwy () {
+	public String getPhevHwy () {
 		return phevHwy;
 	}
 
-	public float getPv2 () {
+	public String getPv2 () {
 		return pv2;
 	}
 
-	public float getPv4 () {
+	public String getPv4 () {
 		return pv4;
 	}
 
-	public float getRange () {
+	public String getRange () {
 		return range;
 	}
 
-	public float getRangeA () {
+	public String getRangeA () {
 		return rangeA;
 	}
 
-	public float getRangeCity () {
+	public String getRangeCity () {
 		return rangeCity;
 	}
 
-	public float getRangeCityA () {
+	public String getRangeCityA () {
 		return rangeCityA;
 	}
 
-	public float getRangeHwy () {
+	public String getRangeHwy () {
 		return rangeHwy;
 	}
 
-	public float getRangeHwyA () {
+	public String getRangeHwyA () {
 		return rangeHwyA;
 	}
 
@@ -571,19 +568,19 @@ public class Vehicle {
 		return trany;
 	}
 
-	public float getUCity () {
+	public String getUCity () {
 		return UCity;
 	}
 
-	public float getUCityA () {
+	public String getUCityA () {
 		return UCityA;
 	}
 
-	public float getUHighway () {
+	public String getUHighway () {
 		return UHighway;
 	}
 
-	public float getUHighwayA () {
+	public String getUHighwayA () {
 		return UHighwayA;
 	}
 
@@ -591,11 +588,11 @@ public class Vehicle {
 		return VClass;
 	}
 
-	public int getYear () {
+	public String getYear () {
 		return year;
 	}
 
-	public float getYouSaveSpend () {
+	public String getYouSaveSpend () {
 		return youSaveSpend;
 	}
 

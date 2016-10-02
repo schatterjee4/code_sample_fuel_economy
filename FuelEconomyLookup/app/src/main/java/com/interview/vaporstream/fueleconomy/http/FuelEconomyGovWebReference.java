@@ -14,9 +14,15 @@ public class FuelEconomyGovWebReference {
 	private static final String FUELECONOMYGOV_URL = "http://www.fueleconomy.gov";
 
 	private static FuelEconomyGovWebReference sharedInstance;
-	public static FuelEconomyGovWebReference getSharedInstance() {
+	private Retrofit webReference;
+	private VehicleEndpoint vehicleEndpoint;
+	private FuelEconomyGovWebReference () {
+		webReference = new Retrofit.Builder().baseUrl(FUELECONOMYGOV_URL).addConverterFactory(SimpleXmlConverterFactory.create()).build();
+	}
+
+	public static FuelEconomyGovWebReference getSharedInstance () {
 		synchronized (FuelEconomyGovWebReference.class) {
-			if(sharedInstance == null) {
+			if (sharedInstance == null) {
 				sharedInstance = new FuelEconomyGovWebReference();
 			}
 
@@ -24,18 +30,8 @@ public class FuelEconomyGovWebReference {
 		}
 	}
 
-	private Retrofit webReference;
-	private VehicleEndpoint vehicleEndpoint;
-
-	private FuelEconomyGovWebReference() {
-		webReference = new Retrofit.Builder()
-				.baseUrl(FUELECONOMYGOV_URL)
-				.addConverterFactory(SimpleXmlConverterFactory.create())
-				.build();
-	}
-
-	public VehicleEndpoint getVehicleEndpoint() {
-		if(vehicleEndpoint == null) {
+	public VehicleEndpoint getVehicleEndpoint () {
+		if (vehicleEndpoint == null) {
 			vehicleEndpoint = webReference.create(VehicleEndpoint.class);
 		}
 

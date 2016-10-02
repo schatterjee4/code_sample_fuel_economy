@@ -3,14 +3,13 @@ package com.interview.vaporstream.fueleconomy.model;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
-import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by mperkins on 9/29/16.
  */
 
-@Root(name="emissionsInfo")
+@Root (name = "emissionsInfo")
 public class EmissionsInfo {
 
 	@PrimaryKey
@@ -38,7 +37,7 @@ public class EmissionsInfo {
 	@Element
 	private String stdText;
 
-	public EmissionsInfo() {
+	public EmissionsInfo () {
 
 	}
 

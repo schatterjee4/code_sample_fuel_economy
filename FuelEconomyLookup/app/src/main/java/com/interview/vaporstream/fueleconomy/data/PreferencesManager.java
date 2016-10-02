@@ -6,5 +6,4 @@ package com.interview.vaporstream.fueleconomy.data;
 
 public class PreferencesManager {
 
-
 }

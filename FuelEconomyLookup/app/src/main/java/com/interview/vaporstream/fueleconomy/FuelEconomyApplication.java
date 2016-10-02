@@ -17,26 +17,25 @@ import io.realm.RealmConfiguration.Builder;
  * Created by mperkins on 9/28/16.
  */
 
-public class FuelEconomyApplication extends Application implements Application.ActivityLifecycleCallbacks{
+public class FuelEconomyApplication extends Application implements Application.ActivityLifecycleCallbacks {
 
 	private static final long BACKGROUND_DETECTION_INTERVAL = 1000;
 	private static FuelEconomyApplication sharedInstance;
-	public static FuelEconomyApplication getSharedInstance() {
-		synchronized (FuelEconomyApplication.class) {
-			return sharedInstance;
-		}
-	}
-
 	private boolean isAnActivityVisible = false;
 	private boolean isAppInBackground = false;
-
 	private Handler handler;
 
 	public FuelEconomyApplication () {
 		handler = new Handler();
 	}
 
-	public boolean isApplicationInBackground() {
+	public static FuelEconomyApplication getSharedInstance () {
+		synchronized (FuelEconomyApplication.class) {
+			return sharedInstance;
+		}
+	}
+
+	public boolean isApplicationInBackground () {
 		return isAppInBackground;
 	}
 
@@ -49,15 +48,14 @@ public class FuelEconomyApplication extends Application implements Application.A
 	}
 
 	private void configureRealm () {
-		RealmConfiguration realmConfig =
-				new Builder().deleteRealmIfMigrationNeeded().build();
+		Realm.init(getApplicationContext());
+		RealmConfiguration realmConfig = new Builder().deleteRealmIfMigrationNeeded().build();
 		Realm.setDefaultConfiguration(realmConfig);
 	}
 
 	@Override
 	public void onTerminate () {
 		super.onTerminate();
-		sharedInstance = null;
 	}
 
 	@Override
@@ -73,7 +71,7 @@ public class FuelEconomyApplication extends Application implements Application.A
 	@Override
 	public void onActivityResumed (Activity activity) {
 		isAnActivityVisible = true;
-		if(isAppInBackground) {
+		if (isAppInBackground) {
 			isAppInBackground = false;
 			notifyAppOfBackgroundChangeEvent();
 		}
@@ -106,17 +104,16 @@ public class FuelEconomyApplication extends Application implements Application.A
 
 	}
 
-	private void detectAppBackgrounding() {
-		if(!isAnActivityVisible){
-			if(!isAppInBackground) {
+	private void detectAppBackgrounding () {
+		if (! isAnActivityVisible) {
+			if (! isAppInBackground) {
 				isAppInBackground = true;
 				notifyAppOfBackgroundChangeEvent();
-				Realm.getDefaultInstance().close();
 			}
 		}
 	}
 
-	private void notifyAppOfBackgroundChangeEvent() {
+	private void notifyAppOfBackgroundChangeEvent () {
 		EventBus.getDefault().post(new BackgroundStatusChangeEvent(isAppInBackground));
 	}
 }
