@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#69CA67</color>
-    <color name="colorPrimaryDark">#297127</color>
-    <color name="colorAccent">#D9881B</color>
+    <color name="colorPrimary">#FFC107</color>
+    <color name="colorPrimaryDark">#FFA000</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccentDark">#C2185B</color>
+    <color name="primaryText">#212121</color>
+
     <color name="solidBlack">#000000</color>
     <color name="semiTransparentBlack">#99000000</color>
     <color name="progressIndicatorBackground">#E6FFFFFF</color>

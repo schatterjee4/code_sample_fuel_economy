@@ -26,7 +26,7 @@ import org.greenrobot.eventbus.Subscribe;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
-	private static final int PROGRESS_STOP_DELAY = 1500;
+	private static final int PROGRESS_STOP_DELAY = 750;
 	protected RelativeLayout progressLayout;
 	protected TextView progressText;
 	protected LinearLayout noConnectionLayout;

@@ -17,7 +17,7 @@ import java.util.List;
 @Root(strict = false)
 public class MenuItemsResponse {
 
-	@ElementList(name = "menuItems", inline = true)
+	@ElementList(name = "menuItems", inline = true, required = false)
 	private List<MenuItem> menuItemList;
 
 	public MenuItemsResponse () {
@@ -25,11 +25,15 @@ public class MenuItemsResponse {
 	}
 
 	public List<MenuItem> getMenuItemList () {
-		List<MenuItem> items = new ArrayList<>();
-		items.add(new MenuItem("",null));
-		if(menuItemList != null) {
-			items.addAll(menuItemList);
+		if(menuItemList == null || menuItemList.size() == 0) {
+			return new ArrayList<>();
+		} else {
+			List<MenuItem> items = new ArrayList<>();
+			items.add(new MenuItem("", null));
+			if (menuItemList != null) {
+				items.addAll(menuItemList);
+			}
+			return items;
 		}
-		return items;
 	}
 }

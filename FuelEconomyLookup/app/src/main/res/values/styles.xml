@@ -2,11 +2,11 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light">
-        <item name="actionMenuTextColor">@color/solidBlack</item>
+        <item name="actionMenuTextColor">@color/primaryText</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColor">@color/solidBlack</item>
+        <item name="android:textColor">@color/primaryText</item>
     </style>
 
 </resources>
