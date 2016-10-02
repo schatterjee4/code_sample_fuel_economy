@@ -9,11 +9,13 @@ import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.interview.vaporstream.fueleconomy.FuelEconomyApplication;
 import com.interview.vaporstream.fueleconomy.event.BackgroundStatusChangeEvent;
 import com.interview.vaporstream.fueleconomy.event.NetworkAvailabilityChangeEvent;
 
@@ -96,7 +98,18 @@ public abstract class BaseActivity extends AppCompatActivity {
 	@Override
 	protected void onResume () {
 		super.onResume();
+		handleInternetAvailability();
+	}
 
+	private void handleInternetAvailability(){
+		Log.d("Base Activity", "Handling Internet Availability");
+		if(noConnectionLayout != null) {
+			if (FuelEconomyApplication.getSharedInstance().isNetworkAvailable()) {
+				noConnectionLayout.setVisibility(View.GONE);
+			} else {
+				noConnectionLayout.setVisibility(View.VISIBLE);
+			}
+		}
 	}
 
 	@Override
@@ -121,15 +134,15 @@ public abstract class BaseActivity extends AppCompatActivity {
 
 	protected void createDialog(@StringRes int titleResourceId, @StringRes int messageResourceId,
 								@StringRes int posButtonResId, @StringRes int negButtonResId,
-								DialogInterface.OnClickListener posButtonRunnable,
-								DialogInterface.OnClickListener negButtonRunnable) {
+								DialogInterface.OnClickListener posButtonListener,
+								DialogInterface.OnClickListener negButtonListener) {
 
 
 		new AlertDialog.Builder(this)
 				.setTitle(titleResourceId)
 				.setMessage(messageResourceId)
-				.setPositiveButton(posButtonResId, posButtonRunnable)
-				.setNegativeButton(negButtonResId, negButtonRunnable)
+				.setPositiveButton(posButtonResId, posButtonListener)
+				.setNegativeButton(negButtonResId, negButtonListener)
 				.show();
 
 	}

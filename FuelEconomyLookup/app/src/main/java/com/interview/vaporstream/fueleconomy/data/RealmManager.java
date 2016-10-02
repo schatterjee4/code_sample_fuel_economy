@@ -7,7 +7,6 @@ package com.interview.vaporstream.fueleconomy.data;
 public class RealmManager {
 
 	private static LocalVehicleManager localVehicleManager;
-	private static PreferencesManager localPreferenceManager;
 
 	public static LocalVehicleManager getLocalVehicleManager () {
 		synchronized (LocalVehicleManager.class) {
@@ -18,15 +17,4 @@ public class RealmManager {
 			return localVehicleManager;
 		}
 	}
-
-	public static PreferencesManager getLocalPreferenceManager () {
-		synchronized (PreferencesManager.class) {
-			if (localPreferenceManager == null) {
-				localPreferenceManager = new PreferencesManager();
-			}
-
-			return localPreferenceManager;
-		}
-	}
-
 }

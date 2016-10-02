@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import com.interview.vaporstream.fueleconomy.R;
 import com.interview.vaporstream.fueleconomy.databinding.ActivitySelectVehicleBinding;
@@ -170,7 +171,7 @@ public class SelectVehicleActivity extends FuelEconomyBaseActivity {
 					}
 					finish();
 				} else {
-					// Show "Must select a vehicle" prompt
+					Toast.makeText(SelectVehicleActivity.this, "Please select a vehicle to proceed", Toast.LENGTH_LONG).show();
 				}
 			}
 		});

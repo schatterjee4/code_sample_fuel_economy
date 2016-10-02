@@ -82,7 +82,10 @@ public class FuelEconomyLookupController extends BaseController {
 
 	@Override
 	public void init () {
-
+		selectedYear = null;
+		selectedMake = null;
+		selectedModel = null;
+		selectedVehicle = null;
 	}
 
 	@Override

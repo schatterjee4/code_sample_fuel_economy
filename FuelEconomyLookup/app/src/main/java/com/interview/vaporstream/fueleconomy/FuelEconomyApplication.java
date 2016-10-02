@@ -2,10 +2,15 @@ package com.interview.vaporstream.fueleconomy;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
 import com.interview.vaporstream.fueleconomy.event.BackgroundStatusChangeEvent;
+import com.interview.vaporstream.fueleconomy.event.NetworkAvailabilityChangeEvent;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -23,6 +28,8 @@ public class FuelEconomyApplication extends Application implements Application.A
 	private static FuelEconomyApplication sharedInstance;
 	private boolean isAnActivityVisible = false;
 	private boolean isAppInBackground = false;
+	private boolean networkAvailable = true;
+
 	private Handler handler;
 
 	public FuelEconomyApplication () {
@@ -38,6 +45,7 @@ public class FuelEconomyApplication extends Application implements Application.A
 	public boolean isApplicationInBackground () {
 		return isAppInBackground;
 	}
+	public boolean isNetworkAvailable() {return networkAvailable; }
 
 	@Override
 	public void onCreate () {
@@ -45,11 +53,11 @@ public class FuelEconomyApplication extends Application implements Application.A
 		sharedInstance = this;
 		registerActivityLifecycleCallbacks(this);
 		configureRealm();
+		checkForNetworkAvailability();
 	}
 
 	private void configureRealm () {
-		Realm.init(getApplicationContext());
-		RealmConfiguration realmConfig = new Builder().deleteRealmIfMigrationNeeded().build();
+		RealmConfiguration realmConfig = new Builder(getApplicationContext()).deleteRealmIfMigrationNeeded().build();
 		Realm.setDefaultConfiguration(realmConfig);
 	}
 
@@ -60,7 +68,6 @@ public class FuelEconomyApplication extends Application implements Application.A
 
 	@Override
 	public void onActivityCreated (Activity activity, Bundle savedInstanceState) {
-
 	}
 
 	@Override
@@ -115,5 +122,21 @@ public class FuelEconomyApplication extends Application implements Application.A
 
 	private void notifyAppOfBackgroundChangeEvent () {
 		EventBus.getDefault().post(new BackgroundStatusChangeEvent(isAppInBackground));
+	}
+
+	public void checkForNetworkAvailability() {
+		try {
+			ConnectivityManager cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+			NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+			boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+
+			if(isConnected != networkAvailable) {
+				networkAvailable = isConnected;
+				EventBus.getDefault().post(new NetworkAvailabilityChangeEvent(isConnected));
+			}
+		} catch(Exception e) {
+			Log.e("NETWORK", Log.getStackTraceString(e));
+		}
 	}
 }
