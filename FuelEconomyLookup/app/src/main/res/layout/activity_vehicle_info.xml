@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
-        <variable name="controller" type="com.interview.vaporstream.fueleconomy.controller.FuelEconomyLookupController" />
-        <variable name="selectedVehicle" type="com.interview.vaporstream.fueleconomy.model.Vehicle" />
+        <variable name="controller" type="com.interview.fueleconomy.controller.FuelEconomyLookupController" />
+        <variable name="selectedVehicle" type="com.interview.fueleconomy.model.Vehicle" />
         <!-- adapters -->
     </data>
     <LinearLayout

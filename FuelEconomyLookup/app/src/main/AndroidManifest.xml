@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.interview.vaporstream.fueleconomy">
+          package="com.interview.fueleconomy">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,13 +13,13 @@
         android:theme="@style/AppTheme"
         android:name=".FuelEconomyApplication">
 
-        <receiver android:name=".receiver.NetworkAvailabilityReceiver">
+        <receiver android:name="com.interview.fueleconomy.receiver.NetworkAvailabilityReceiver">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
 
-        <activity android:name=".activity.SavedVehicleListActivity"
+        <activity android:name="com.interview.fueleconomy.activity.SavedVehicleListActivity"
                   android:label="@string/app_name"
                   android:theme="@style/AppTheme">
             <intent-filter>
@@ -28,25 +28,25 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.SelectVehicleActivity"
+        <activity android:name="com.interview.fueleconomy.activity.SelectVehicleActivity"
                   android:label="@string/activity_select_vehicle_title"
                   android:theme="@style/AppTheme"
-                  android:parentActivityName=".activity.SavedVehicleListActivity">
+                  android:parentActivityName="com.interview.fueleconomy.activity.SavedVehicleListActivity">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.SavedVehicleListActivity" />
+                android:value="com.interview.fueleconomy.activity.SavedVehicleListActivity" />
 
         </activity>
 
-        <activity android:name=".activity.VehicleInfoActivity"
+        <activity android:name="com.interview.fueleconomy.activity.VehicleInfoActivity"
                   android:label="@string/activity_vehicle_info_title"
                   android:theme="@style/AppTheme"
-                  android:parentActivityName=".activity.SavedVehicleListActivity">
+                  android:parentActivityName="com.interview.fueleconomy.activity.SavedVehicleListActivity">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.SavedVehicleListActivity" />
+                android:value="com.interview.fueleconomy.activity.SavedVehicleListActivity" />
 
         </activity>
 
